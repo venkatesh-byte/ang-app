@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+  padding:0;
+  margin:0;
+ }
+
+html,body{
+background-color:whitesmoke;
+font-family:'roboto','sans-serif';
+}
+.container{
+  width:100%;
+  padding-right:24px;
+  padding-left:24px;
+  margin-left:auto;
+  margin-right:auto;
+}
+@media(min-width:1200px){
+    .container{
+      max-width:1200px;
+    }
+}
+
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  margin-left:-12px;
+  margin-right:-12px;
+}
+
+.w-180{
+  width:100% !important;
+}
+.vh-100{
+  height:100vh !important;
+}
+.justify-content-center{
+  justify-content:center !important;
+}
+.align-item-center{
+  align-items:center !important;
+}
+
+.header h4{
+ margin-top:10px;
+ font-weight:bold;
+ font-size:14px;
+ color:rgba(0,0,0,4);
+}
+.form{
+  display:flex;
+  flex-direction:column;
+}
+
+.form p{
+  text-align:center;
+}
+.form p a {
+  color:blue;
+  font-size: 14px;
+}
+.form>input{
+    height:46px;
+    padding:0 16px;
+    border:2px solid #ddd;
+    border-radius:4px;
+    outline:0;
+    margin-top:20px;
+}
+.form button{
+    width:100%;
+    padding:10px 16px;
+    border:0;
+    background:black;
+    border-radius:3px;
+    margin-top:10px;
+    color:#fff;
+    letter-spacing:1px;
+    cursor:pointer;
+}
+.auth-box{
+  background-color:white;
+  padding:48px 56px;
+  border:2px solid black;
+  box-shadow:rgba(17,12,46,0.15) 0px 48px 100px 0px;
+}
+.label{
+  font-size:1em;
+  font-weight:bold;
+  text-align:right !important;
+}
+span.text {
+  font-size: 1em;
+  font-weight: bold;
+}
+

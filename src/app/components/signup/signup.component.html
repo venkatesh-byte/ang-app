@@ -1,0 +1,36 @@
+<div class="container" *ngIf="user">
+  <div class="row w-180 vh-100 justify-content-center align-item-center">
+    <div class="auth-box">
+      <!-->Signup goes here</!-->
+      <div *ngIf="!isConfirm">
+        <div class="header">
+          <h2>Register</h2>
+          <h4>Register your account using below information</h4>
+          <div class="form">
+            <input type="text" name="firstName" [(ngModel)]="user.firstName" placeholder="First Name" />
+            <input type="text" name="lastName" [(ngModel)]="user.lastName" placeholder="Last Name" />
+            <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" />
+            <input [type]="user.showPassword?'text':'password'" name="password" [(ngModel)]="user.password" placeholder="Password" />
+            <div>
+              <input type="checkbox" name="showPassword" (change)="user.showPassword=!user.showPassword" /><span class="text">Show Password</span>
+              <p class="label">Already user?<a href="/sign-in">Sign In</a></p>
+              <button (click)="signUp()">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-->Confirm Signup goes here</!-->
+      <div *ngIf="isConfirm">
+        <div class="header">
+          <h2>Enter Code</h2>
+          <h4 style="color:green;">A verification code sent to <strong>{{user.email}}</strong></h4>
+        </div>
+        <div class="form">
+          <input type="text" name="verificationCode" [(ngModel)]="user.code" placeholder="Enter verification code" />
+          <button (click)="confirm()">Confirm</button>
+        </div>
+      </div>
+</div>
+</div>
+</div>
+<app-modal *ngIf="showAlert" (modalClose)="showAlert=false;" [message]="alertMessage"></app-modal>

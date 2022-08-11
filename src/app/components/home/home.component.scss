@@ -1,0 +1,23 @@
+.navigation {
+    width: 100%;
+    background-color: black;
+    height: auto;
+    overflow: hidden;
+    max-height: 100px;
+}
+
+img{
+    width:25px;
+    border-radius:50px;
+    float:left;
+}
+.logout {
+  overflow: hidden;
+  letter-spacing: 3px;
+  color: #fff;
+  text-align: right;
+}
+.button{
+  text-decoration:none;
+  float:right;
+}

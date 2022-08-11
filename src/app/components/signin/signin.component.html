@@ -1,0 +1,41 @@
+<div class="container" *ngIf="user">
+  <div class="row w-180 vh-100 justify-content-center align-item-center">
+    <div class="auth-box">
+      <!-->Signin goes here</!-->
+      <div *ngIf="!forgotPassword">
+        <div class="header">
+          <h2>Welcome back</h2>
+          <h4>Login to your account using Email and Password</h4>
+          <div class="form">
+            <input type="email" name="email" [(ngModel)]="user.email" placeholder="Email" autocomplete="off" />
+            <input [type]="user.showPassword?'text':'password'" name="password" [(ngModel)]="user.password" placeholder="Password" />
+            <div>
+              <input type="checkbox" name="showPassword" (change)="user.showPassword=!user.showPassword" /><span class="text">Show Password</span>
+              <p (click)="forgotPasswordClicked()" class="label" style="cursor:pointer;">Forgot Password</p>
+              <p class="label">Not member?<a href="/sign-up">Sign Up</a></p>
+              <button (click)="signIn()">Sign in</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-->Forgot password goes here</!-->
+      <div *ngIf="forgotPassword">
+        <div class="header">
+          <h2>Account Recovery</h2>
+          <h4 style="color:green;">A verification code sent to <strong>{{user.email}}</strong></h4>
+          <div class="form">
+            <input type="text" name="verificationCode" [(ngModel)]="user.code" placeholder="Enter verification code" />
+            <input [type]="user.showPassword?'text':'password'" name="password" [(ngModel)]="new_password" placeholder="Enter New Password" />
+            <div>
+              <input type="checkbox" name="showPassword" (change)="user.showPassword=!user.showPassword" />Show Password
+              <button (click)="submitNew()">Submit New Password</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--Modal -->
+<app-modal *ngIf="showAlert" (modalClose)="showAlert=false" [message]="alertMessage"></app-modal>
